@@ -10,7 +10,7 @@ library(leaflet)
 library(lmtest)
 library(MASS)
 
-sovi_data <- read_delim("D:/SEMESTER 4/KOMSTAT/UAS-KomputasiStatistik/sovi_data.csv", 
+sovi_data <- read_delim("sovi_data.csv", 
                         delim = ";", 
                         col_types = cols(
                           DISTRICTCODE = col_character(),
@@ -18,8 +18,8 @@ sovi_data <- read_delim("D:/SEMESTER 4/KOMSTAT/UAS-KomputasiStatistik/sovi_data.
                           CITY_NAME = col_character()
                         ))
 
-peta_indonesia <- st_read("D:/SEMESTER 4/KOMSTAT/UAS-KomputasiStatistik/indonesia.geojson")
-matriks_distance <- read.csv("D:/SEMESTER 4/KOMSTAT/UAS-KomputasiStatistik/distance.csv", row.names = 1, sep = ";", check.names = FALSE)
+peta_indonesia <- st_read("indonesia.geojson")
+matriks_distance <- read.csv("distance.csv", row.names = 1, sep = ";", check.names = FALSE)
 matriks_distance <- as.matrix(matriks_distance)
 colnames(matriks_distance) <- rownames(matriks_distance)
 
